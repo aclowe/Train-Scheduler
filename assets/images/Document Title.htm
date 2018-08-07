@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///Users/Adams/Desktop/Train-Scheduler/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS reset -->
+    <link rel="stylesheet" type="text/css" href="./Document Title_files/reset.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./Document Title_files/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./Document Title_files/styles.css">
+    <!-- jQuery Library -->
+    <title>Document Title</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="./Document Title_files/trainlogo.jpg">
+          <img src="./Document Title_files/trainlogo.jpg" width="75" height="50" class="align-top float-left mr-2" alt="trainlogo">
+          <h1 class="float-left">Train Scheduler</h1>
+        </a>
+      </nav>
+    <div class="container mt-2 border border-dark">
+        <div class="row">
+            <div class="col-sm-12 text-center bg-dark text-white">
+                Current Schedule
+            </div>
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Del</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1 delete">
+                              </div>
+                        </td>
+                        <td>0</td>
+                        <td>Coaster</td>
+                        <td>San Diego</td>
+                        <td>60</td>
+                        <td>1200</td>
+                        <td>20</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2 border border-dark">
+        <div class="row">
+            <div class="col-sm-12 text-center bg-dark text-white">
+                Add Train
+            </div>
+            <div class="col-sm-12">
+                <form>
+                    <div class="form-group mt-2">
+                            <label for="trainName">Train Name
+                            </label>
+                            <textarea class="form-control" id="trainName" rows="1">                            </textarea>
+                        </div>
+                    <div class="form-group mt-2">
+                            <label for="destination">Destination
+                            </label>
+                            <textarea class="form-control" id="destination" rows="1">                            </textarea>
+                        </div>
+                    <div class="form-group mt-2">
+                            <label for="firstTrainTime">First Train Time (HH:MM - Military Time)
+                            </label>
+                            <textarea class="form-control" id="firstTrainTime" rows="1">                            </textarea>
+                        </div>
+                    <div class="form-group mt-2">
+                            <label for="frequency">Frequency (min)
+                            </label>
+                            <textarea class="form-control" id="frequency" rows="1">                            </textarea>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- javascript  -->
+<script src="./Document Title_files/jquery.min.js"></script>
+<script src="./Document Title_files/javascript.js"></script>
+
+
+
+</body></html>

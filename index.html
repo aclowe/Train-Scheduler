@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS reset -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <title>Document Title</title>
+</head>
+
+<body>
+    <div class="container mt-2">
+        <div class="row">
+           <div class="col-sm-12 text-center">
+                <a class="navbar-brand" href="assets/images/trainlogo.jpg">
+                <img src="assets/images/trainlogo.jpg" width="75" height="50" class="align-top mr-2 d-inline-block" alt="trainlogo">
+                <h1 class='d-inline-block'>Train Scheduler</h1>
+        </a>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2 border border-dark">
+        <div class="row">
+            <div class="col-sm-12 text-center bg-dark text-white">
+                Current Schedule
+            </div>
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Del</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                    </thead>
+                    <tbody id="trainInfo">
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1 delete">
+                              </div>
+                        </td>
+                        <td>0</td>
+                        <td>Coaster</td>
+                        <td>San Diego</td>
+                        <td>60</td>
+                        <td>1200</td>
+                        <td>20</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2 border border-dark">
+        <div class="row">
+            <div class="col-sm-12 text-center bg-dark text-white">
+                Add Train
+            </div>
+            <div class="col-sm-12">
+                <form>
+                    <div class="form-group mt-2">
+                            <label for="trainName">Train Name
+                            </label>
+                            <textarea class="form-control" id="trainName" rows="1">
+                            </textarea>
+                        </div>
+                    <div class="form-group mt-2">
+                            <label for="destination">Destination
+                            </label>
+                            <textarea class="form-control" id="destination" rows="1">
+                            </textarea>
+                        </div>
+                    <div class="form-group mt-2">
+                            <label for="firstTrainTime">First Train Time (hh:mm - Military Time)
+                            </label>
+                            <textarea class="form-control" id="firstTrainTime" rows="1">
+                            </textarea>
+                        </div>
+                    <div class="form-group mt-2">
+                            <label for="frequency">Frequency (min)
+                            </label>
+                            <textarea class="form-control" id="frequency" rows="1">
+                            </textarea>
+                            <button type="submit" class="btn btn-dark mt-2" id="submit">Submit
+                            </button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- jquery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- javascript.js -->
+<script src="assets/javascript/javascript.js">
+</script>
+
+</body>
+
+</html>
