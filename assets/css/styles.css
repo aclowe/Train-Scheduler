@@ -1,0 +1,39 @@
+body {
+    font-weight: bold;
+}
+
+/* Setup For An Image That Fits On Most Screens And Resizes*/
+.with-bg-size {
+    background-image: url("../images/bg1.png");
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    
+    
+    -webkit-animation: fade-in-out 100s infinite; /* Safari 4+ */
+    -moz-animation:    fade-in-out 100s infinite; /* Fx 5+ */
+    -o-animation:      fade-in-out 100s infinite; /* Opera 12+ */
+    animation:         fade-in-out 100s infinite; /* IE 10+, Fx 29+ */
+    
+    
+  }
+  /* The Keyframes*/
+  @keyframes fade-in-out {
+    25% {
+      background-image: url("../images/bg2.png");
+    }
+    50% {
+      background-image: url("../images/bg3.png");
+    }
+    
+    75%{
+      background-image: url("../images/bg4.png");
+    }
+    
+  /* Animation Does Not End At 100% Because It Makes The Images Transition In/Out Better For Some Reason*/
+  }
+
+  .inputBox {
+    text-align: left!important;
+  }
