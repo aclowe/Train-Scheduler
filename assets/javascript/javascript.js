@@ -15,6 +15,7 @@ var trainName = "";
 var destination = "";
 var firstTrainTime;
 var frequency = "";
+var currentTime = moment(currentTime).format("hh:mm");
 
   // Whenever a user clicks the click button
 $("#submit").on("click", function(event) {
@@ -53,12 +54,39 @@ database.ref().on("child_added", function(childSnapshot) {
     firstTrainTime = childSnapshot.val().firstTrainTime;
     frequency = childSnapshot.val().frequency;
   
+    //calculate times
+     // First Time (pushed back 1 year to make sure it comes before current time)
+     var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
+     console.log(firstTrainTimeConverted);
+     
+     // Current Time
+     console.log("CURRENT TIME: " + currentTime);
+
+     // Difference between the times
+     var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
+
+     console.log("DIFFERENCE IN TIME: " + diffTime);
+
+     // Time apart (remainder)
+     var tRemainder = diffTime % frequency;
+     console.log(tRemainder);
+
+     // Minute Until Train
+     var tMinutesTillTrain = frequency - tRemainder;
+     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+     // Next Train
+     var nextTrainTime = moment().add(tMinutesTillTrain, "minutes");
+     console.log("ARRIVAL TIME: " + moment(nextTrainTime).format("hh:mm"));
+
     // Console Log the values
     console.log("trainID: "  + childSnapshot.val().key);
     console.log("trainName: " + childSnapshot.val().trainName);
     console.log("destination: " + childSnapshot.val().destination);
     console.log("firstTrainTime: " + childSnapshot.val().firstTrainTime);
     console.log("freqency: " + childSnapshot.val().frequency);
+    console.log("nextTrainTime: " + nextTrainTime)
+    console.log("-------- END OF TRAIN INFO --------")
   
     // Change the HTML using jQuery to reflect the updated values
     var newTableRow = $("#trainInfo").append("<tr>");
@@ -66,8 +94,8 @@ database.ref().on("child_added", function(childSnapshot) {
     newTableRow.append("<td>" + childSnapshot.val().trainName + "</td>");
     newTableRow.append("<td>" + childSnapshot.val().destination + "</td>");
     newTableRow.append("<td>" + childSnapshot.val().frequency + "</td>");
-    newTableRow.append("<td>" + childSnapshot.val().nextArrival + "</td>");
-   
+    newTableRow.append("<td>" + moment(nextTrainTime).format("hh:mm") + "</td>");
+    newTableRow.append("<td>" + tMinutesTillTrain + "</td>");
   
     // Change the HTML using jQuery to reflect the updated values
     $("#submit").push(newTableRow)
@@ -79,4 +107,3 @@ database.ref().on("child_added", function(childSnapshot) {
   function(errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
-  
