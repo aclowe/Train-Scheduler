@@ -71,7 +71,7 @@ database.ref().on("child_added", function (childSnapshot) {
 
   // Time apart (remainder)
   var tRemainder = diffTime % frequency;
-  console.log(tRemainder);
+  console.log("tRemainder: " + tRemainder);
 
   // Minute Until Train
   var tMinutesTillTrain = frequency - tRemainder;
@@ -79,7 +79,7 @@ database.ref().on("child_added", function (childSnapshot) {
 
   // Next Train
   var nextTrainTime = moment().add(tMinutesTillTrain, "minutes");
-  console.log("ARRIVAL TIME: " + moment(nextTrainTime).format("H:HH"));
+  console.log("ARRIVAL TIME: " + moment(nextTrainTime).format("hh:mm"));
 
   // Console Log the values
   trainID = childSnapshot.key
@@ -97,7 +97,7 @@ database.ref().on("child_added", function (childSnapshot) {
     "<td>" + childSnapshot.val().trainName + "</td>",
     "<td>" + childSnapshot.val().destination + "</td>",
     "<td>" + childSnapshot.val().frequency + "</td>",
-    "<td>" + moment(nextTrainTime).format("H:HH") + "</td>",
+    "<td>" + moment(nextTrainTime).format("HH:mm") + "</td>",
     "<td>" + tMinutesTillTrain + "</td>",
   );
 
