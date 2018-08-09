@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <!-- Moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <title>Document Title</title>
 </head>
@@ -19,7 +21,7 @@
 <body class="with-bg-size">
     <div class="container mt-2">
         <div class="row">
-           <div class="col-sm-12 text-center">
+            <div class="col-sm-12 text-center">
                 <img src="assets/images/calendar_icon.png" width="75" height="50" class="align-top mr-2 d-inline-block" alt="calendarIcon">
                 <h1 class='d-inline-block ml-2 mr-2'>Train Scheduler</h1>
                 <img src="assets/images/train_icon.png" width="75" height="50" class="align-top mr-2 d-inline-block" alt="trainIcon">
@@ -32,16 +34,15 @@
                 Current Schedule
             </div>
             <div class="col-sm-12">
-                <table class="table table-striped">
+                <table class="table table-striped display">
                     <thead>
-                    <tr>
-                        <th scope="col">Del</th>
-                        <th scope="col">Train Name</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Frequency (min)</th>
-                        <th scope="col">Next Arrival</th>
-                        <th scope="col">Minutes Away</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
                     </thead>
                     <tbody id="trainInfo">
 
@@ -58,41 +59,41 @@
             <div class="col-sm-12">
                 <form>
                     <div class="form-group mt-2">
-                            <label for="trainName">Train Name
-                            </label>
-                            <textarea class="form-control inputBox" id="trainName" rows="1">
+                        <label for="trainName">Train Name
+                        </label>
+                        <textarea class="form-control inputBox" id="trainName" rows="1">
                             </textarea>
-                        </div>
+                    </div>
                     <div class="form-group mt-2">
-                            <label for="destination">Destination
-                            </label>
-                            <textarea class="form-control inputBox" id="destination" rows="1">
+                        <label for="destination">Destination
+                        </label>
+                        <textarea class="form-control inputBox" id="destination" rows="1">
                             </textarea>
-                        </div>
+                    </div>
                     <div class="form-group mt-2">
-                            <label for="firstTrainTime">First Train Time (hh:mm - Military Time)
-                            </label>
-                            <textarea class="form-control inputBox" id="firstTrainTime" rows="1">
+                        <label for="firstTrainTime">First Train Time (hh:mm - Military Time)
+                        </label>
+                        <textarea class="form-control inputBox" id="firstTrainTime" rows="1">
                             </textarea>
-                        </div>
+                    </div>
                     <div class="form-group mt-2">
-                            <label for="frequency">Frequency (min)
-                            </label>
-                            <textarea class="form-control inputBox" id="frequency" rows="1">
+                        <label for="frequency">Frequency (min)
+                        </label>
+                        <textarea class="form-control inputBox" id="frequency" rows="1">
                             </textarea>
-                            <button type="submit" class="btn btn-dark mt-2" id="submit">Submit
-                            </button>
-                        </div>
+                        <button type="submit" class="btn btn-dark mt-2" id="submit">Submit
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 
-<!-- jquery  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- javascript.js -->
-<script src="assets/javascript/javascript.js">
-</script>
+    <!-- jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- javascript.js -->
+    <script src="assets/javascript/javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 </body>
 
